@@ -1,14 +1,14 @@
-window.onload,window.onresize = function(){
+window.onload = function(){
     var wrapper = document.getElementById("wrapper");
-    var canvas = document.getElementById("myCanvas");
+    var canvas = document.createElement("canvas");
     var context = canvas.getContext("2d");
     var image = document.getElementById("myImage");
 
     canvas.width = wrapper.offsetWidth;
     canvas.height = wrapper.offsetHeight;
     canvas.style.backgroundColor = "white";
+    canvas.style.position = "absolute";
+    canvas.style.opacity = "0.5";
 
-    console.log("Wrapper:"+wrapper.offsetHeight+"x"+wrapper.offsetWidth);
-    console.log("Image:"+image.offsetHeight+"x"+image.offsetWidth);
-    console.log("Canvas:"+canvas.height+"x"+canvas.width);
+    wrapper.appendChild(canvas);
 }
